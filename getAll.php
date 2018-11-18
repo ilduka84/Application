@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>GetAll</title>
+    <script src="sort.js"></script>
 </head>
 <body>
 <?php
@@ -13,16 +14,16 @@ $results = $facade->getAll();
 
 
 ?>
-<table border="2">
+<table id="myTable2" border="2">
     <thead>
     <tr>
-        <th>AZIENDA</th>
-        <th>VOTO</th>
-        <th>LOCATION</th>
-        <th>DATA</th>
-        <th>STATO</th>
-        <th>SALARY</th>
-        <th>FEEDBACK</th>
+        <th onclick="sortTable(0)">AZIENDA</th>
+        <th onclick="sortTable(1)">VOTO</th>
+        <th onclick="sortTable(2)">LOCATION</th>
+        <th onclick="sortTable(3)">DATA</th>
+        <th onclick="sortTable(4)">STATO</th>
+        <th onclick="sortTable(5)">SALARY</th>
+        <th onclick="sortTable(6)">FEEDBACK</th>
     </tr>
     </thead>
     <tbody>
