@@ -37,7 +37,7 @@ $results = $facade->getAll();
             <td><?php echo $application->getSalary();?></td>
             <td><?php echo $application->getFeedback();?></td>
             <td><form action="updateStatus.php" method="post">
-                    <input type="hidden" id="name" name="name" value=<?php echo $application->getFirm()->getName();?>>
+                    <input type="hidden" id="name" name="name" value="<?php echo( $application->getFirm()->getName());?>">
                     <input type="submit" value="CHANGE">
                 </form></td>
         </tr>

@@ -16,7 +16,7 @@ $result = $facade->getFromName($name);
 
 ?>
 <form action="Update.php" method="post">
-    AZIENDA: <input type="text" name="firmName" value=<?php echo $result[0]->getFirm()->getName();?>><br>
+    AZIENDA: <input type="text" name="firmName" value="<?php echo $result[0]->getFirm()->getName();?>"><br>
     IMPORTANZA:<input type="text" name="importance"value=<?php echo $result[0]->getFirm()->getImportance();?>><br>
     STATO:<input type="text" list="types" name="type"value=<?php echo $result[0]->getTypes()->last()->getType();?>>
     <datalist id="types">
@@ -37,7 +37,7 @@ $result = $facade->getFromName($name);
     </datalist>
     <br>
 
-    FEEDBACK:<input type="text" name="feedback"value=<?php echo $result[0]->getFeedback();?>><br>
+    FEEDBACK:<input type="text" name="feedback"value="<?php echo $result[0]->getFeedback();?>"><br>
     <input type="submit" value="Submit">
 </form>
 </body>
