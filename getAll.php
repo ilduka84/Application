@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>GetAll</title>
     <script src="sort.js"></script>
+	<script src="filter.js"></script>
 </head>
 <body>
 <?php
@@ -14,6 +15,7 @@ $results = $facade->getAll();
 
 
 ?>
+<input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for names.."><br>
 <table id="myTable2" border="2">
     <thead>
     <tr>
@@ -24,6 +26,7 @@ $results = $facade->getAll();
         <th onclick="sortTable(4)">STATO</th>
         <th onclick="sortTable(5)">SALARY</th>
         <th onclick="sortTable(6)">FEEDBACK</th>
+        <th onclick="sortTable(7)">DESCRIPTION</th>
     </tr>
     </thead>
     <tbody>
@@ -36,8 +39,9 @@ $results = $facade->getAll();
             <td><?php echo $application->getTypes()->last()->getType();?></td>
             <td><?php echo $application->getSalary();?></td>
             <td><?php echo $application->getFeedback();?></td>
+            <td><?php echo $application->getDescription();?></td>
             <td><form action="updateStatus.php" method="post">
-                    <input type="hidden" id="name" name="name" value="<?php echo( $application->getFirm()->getName());?>">
+                    <input type="hidden" id="name" name="name" value="<?php echo $application->getFirm()->getName();?>">
                     <input type="submit" value="CHANGE">
                 </form></td>
         </tr>
